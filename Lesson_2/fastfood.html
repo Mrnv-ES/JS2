@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Фаст-фуд</title>
+</head>
+
+<body>
+    <form action="#" id="hamburger form">
+        <fieldset id="hamburger fieldset" align="center" style="padding-top: 10px;">
+            <p style="color: rgb(51, 48, 219); font-size: 20px; font-weight: bold;">
+                Выберите размер и начинку бургера, <br>
+                а мы рассчитаем его стоимость и
+                калорийность</p>
+            <fieldset class="hamburger-fieldset-inside">
+                <h4>Размер бургера:</h4>
+                <input id="bigburger" type="radio" name="size" data-price="100" data-calories="40" value="big" checked>
+                <label for="bigburger">Большой (100 рублей, 40 калорий)</label><br>
+                <input id="smallburger" type="radio" name="size" data-price="50" data-calories="20" value="small">
+                <!--  class="hamburger-input" -->
+                <label for="smallburger">Маленький (50 рублей, 20 калорий)</label>
+            </fieldset>
+            <br>
+            <fieldset class="hamburger-fieldset-inside">
+                <h4>Начинка:</h4>
+                <input id="cheese" type="radio" name="add" data-price="10" data-calories="20" value="cheese" checked>
+                <lebel for="cheese">Сыр (10 рублей, 20 калорий)</lebel><br>
+                <input id="salad" type="radio" name="add" data-price="20" data-calories="5" value="salad">
+                <lebel for="salad">Салат (20 рублей, 5 калорий)</lebel><br>
+                <input id="potato" type="radio" name="add" data-price="15" data-calories="10" value="potato">
+                <lebel for="potato">Картофель (15 рублей, 10 калорий)</lebel><br>
+            </fieldset>
+            <br>
+            <fieldset class="hamburger-fieldset-inside">
+                <h4>Дополнительно:</h4>
+                <input id="spices" type="checkbox" name="topings" data-price="15" data-calories="0" value="spices">
+                <lebel for="spices">Приправа (15 рублей, 0 калорий)</lebel><br>
+                <input id="sause" type="checkbox" name="topings" data-price="20" data-calories="5" value="sause">
+                <lebel for="sause">Майонез (20 рублей, 5 калорий)</lebel><br>
+            </fieldset>
+            <br>
+            <input id="check" type="button" value="Готово"
+                style="background-color: rgb(14, 59, 206); color: floralwhite; font-size: 16px; font-family: serif;">
+            <br>
+            <p id="result" style="font-weight: bold;">Цена бургера: <span id="price">0</span> руб.
+                <br><br>
+                Калории: <span id="calories">0</span> руб.
+            </p>
+        </fieldset>
+    </form>
+    <script src="fastfood.js"></script>
+    <script>
+        window.onload = () => {
+            document.getElementById("check").addEventListener('click', () => {
+                let burger = new Burger('size', 'add', 'topings');
+                console.log(burger);
+                burger.showSum("#price", "#calories");
+            })
+        }
+    </script>
+</body>
+
+</html>
