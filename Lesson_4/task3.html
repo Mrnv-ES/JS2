@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleForTask3.css">
+    <title>Validator</title>
+</head>
+
+<body>
+    <form action="#" id="form">
+        <div>
+            <label>
+                Введите Ваше имя:<br>
+                <input type="text" name="name" id="name">
+            </label>
+        </div>
+        <div>
+            <label>
+                Введите Ваш телефон:<br>
+                <input type="text" name="phone" id="phone">
+            </label>
+        </div>
+        <div>
+            <label>
+                Введите Вашу почту:<br>
+                <input type="text" name="email" id="email">
+            </label>
+        </div>
+        <button id="val-button">Готово</button>
+    </form>
+    <script src="task3.js"></script>
+    <script>
+        window.onload = () => {
+            document.getElementById('form').addEventListener('submit', e => {
+                let isValid = new DataVadidator('form');
+                if (!isValid.valid) {
+                    e.preventDefault();
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
