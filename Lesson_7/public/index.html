@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">Интернет-магазин</div>
+            <div class="basket">
+                <search ref="search"></search>
+                <basket ref="basket"></basket>
+            </div>
+        </header>
+        <main>
+            <show-error></show-error>
+            <products ref="products"></products>
+        </main>
+    </div>
+    <div class="footer">
+        <ul class="footer-contacts">
+            <li style="flex-grow:1;">г. Москва, ул. Ленина, 8</li>
+            <li style="flex-grow:1;">+7-(999)-999-99-99</li>
+            <li style="flex-grow:1;">eshop@example.ru</li>
+        </ul>
+        <p class="rights">2021 All rights reserved &copy;</p>
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/productComponent.js"></script>
+    <script src="js/basketComponent.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/searchComponent.js"></script>
+    <script src="js/errorComponent.js"></script>
+</body>
+
+</html>
